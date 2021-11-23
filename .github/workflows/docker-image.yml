@@ -6,6 +6,15 @@ on:
       - '.github/**'
       - 'README.md'
       - 'LICENSE'
+
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'manual trigger'  
    
 env:
   # Use docker.io for Docker Hub if empty
