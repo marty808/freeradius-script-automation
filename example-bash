@@ -1,0 +1,8 @@
+#!/bin/bash
+
+log () {
+  script=$(basename "$0")
+  echo  "$(date +"%a %b %d %T %Y") ($script): $1"
+}
+
+log "Hello World - this is BASH"

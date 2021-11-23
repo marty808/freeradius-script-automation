@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+
+import datetime
+import os
+
+def log(text):
+  print(datetime.datetime.now().strftime("%a %b %d %H:%M:%S %Y") + " (" + os.path.basename(__file__)  + ") : " + text)
+
+log("Hello World - this is PYTHON")
