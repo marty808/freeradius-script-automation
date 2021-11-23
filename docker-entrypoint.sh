@@ -24,16 +24,16 @@ echo "$CRON_SCHEDULE    root    run-parts /config/exec.d >> /var/log/script.log"
 touch /var/log/script.log
 
 # start executables
-echo "starting cron..."
+echo "$(date +"%a %b %d %T %Y") : starting cron..."
 cron
 
 freeradius -C
 if [[ $? -ne 0 ]]; then 
-  echo "$(date) : freeradius config check failed!!"
+  echo "$(date +"%a %b %d %T %Y") : freeradius config check failed!!"
   exit 1
 else 
-  echo "freeradius config check passed..."
-  echo "starting freeradius..."
+  echo "$(date +"%a %b %d %T %Y") : freeradius config check passed..."
+  echo "$(date +"%a %b %d %T %Y") : starting freeradius..."
   freeradius
 fi
 
