@@ -2,6 +2,7 @@
 
 if [[ ! -d "/config/exec.d/" ]]; then
   mkdir -p /config/exec.d
+  cp /examples/* /config/exec.d/
 fi
 
 if [[ ! -f "/config/clients.conf" ]]; then
