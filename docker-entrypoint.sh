@@ -23,6 +23,12 @@ echo "$CRON_SCHEDULE    root    run-parts /config/exec.d >> /var/log/script.log"
 
 touch /var/log/script.log
 
+# generate locale if changed
+if [[ "$LANG" != "C.UTF8" ]]; then
+  echo "$(date +"%a %b %d %T %Y") : generate locale..."
+  locale-gen
+fi
+
 # start executables
 echo "$(date +"%a %b %d %T %Y") : starting cron..."
 cron

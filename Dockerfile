@@ -1,10 +1,14 @@
 FROM freeradius/freeradius-server
 
 ENV CRON_SCHEDULE="*/1 * * * *"
+ENV LANG="C.UTF-8"
 
 # install packages
+# install python packages via pip to get the newest version
 RUN apt-get update && \
-    apt-get install -y python3 python3-openpyxl cron
+    apt-get install -y python3 python3-pip cron locales &&\
+    locale-gen && \
+    pip3 install openpyxl
 
 
 # change files
