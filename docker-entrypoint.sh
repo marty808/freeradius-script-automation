@@ -19,7 +19,7 @@ if [[ ! -f "/config/users" ]]; then
 fi
 
 
-echo "$CRON_SCHEDULE    root    run-parts /config/exec.d >> /var/log/script.log" > /etc/cron.d/script
+echo "$CRON_SCHEDULE    root    export LANG=$LANG; run-parts /config/exec.d >> /var/log/script.log" > /etc/cron.d/script
 
 touch /var/log/script.log
 
