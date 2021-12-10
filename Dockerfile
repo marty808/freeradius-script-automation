@@ -17,7 +17,7 @@ RUN mkdir -p /config/exec.d/ && \
     sed -i 's/auth = no$/auth = yes/' /etc/freeradius/radiusd.conf && \
     echo "# include config file\n\$INCLUDE /config/clients.conf\n" >> /etc/freeradius/clients.conf && \
     echo "# include config file\n\$INCLUDE /config/huntgroups\n" >> /etc/freeradius/huntgroups && \
-    sed -i '1i# include config file\n$INCLUDE /config/users\n' /etc/freeradius/mods-config/file/authorize
+    sed -i '1i# include config file\n$INCLUDE /config/users\n' /etc/freeradius/mods-config/files/authorize
 
 # copy examples
 COPY example-bash /examples/example-bash
