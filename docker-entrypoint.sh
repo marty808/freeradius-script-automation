@@ -33,7 +33,12 @@ fi
 echo "$(date +"%a %b %d %T %Y") : starting cron..."
 cron
 
-freeradius -C
+if $DEBUG; then
+  freeradius -X
+else
+  freeradius -C
+fi 
+
 if [[ $? -ne 0 ]]; then 
   echo "$(date +"%a %b %d %T %Y") : freeradius config check failed!!"
   exit 1
