@@ -34,6 +34,7 @@ echo "$(date +"%a %b %d %T %Y") : starting cron..."
 cron
 
 if $DEBUG; then
+  echo "$(date +"%a %b %d %T %Y") : freeradius DEBUG enabled!!"
   freeradius -X
 else
   freeradius -C
