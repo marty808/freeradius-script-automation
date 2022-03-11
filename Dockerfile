@@ -6,7 +6,7 @@ ENV LANG="C.UTF-8"
 # install packages
 # install python packages via pip to get the newest version
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip cron locales freeradius-python3 &&\
+    apt-get install -y python3 python3-pip cron locales &&\
     locale-gen && \
     pip3 install openpyxl requests
 
