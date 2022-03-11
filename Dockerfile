@@ -8,7 +8,7 @@ ENV LANG="C.UTF-8"
 RUN apt-get update && \
     apt-get install -y python3 python3-pip cron locales freeradius-python3 &&\
     locale-gen && \
-    pip3 install openpyxl
+    pip3 install openpyxl requests
 
 
 # change files
