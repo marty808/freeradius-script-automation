@@ -5,6 +5,8 @@ if [[ ! -d "/config/exec.d/" ]]; then
   cp /examples/* /config/exec.d/
 fi
 
+chmod -R a+r /config 
+
 if [[ ! -f "/config/clients.conf" ]]; then
   echo "# don't delete this file" > /config/clients.conf
 fi
