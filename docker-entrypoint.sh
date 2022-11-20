@@ -7,6 +7,15 @@ fi
 
 chmod -R a+r /config 
 
+if [[ -d "/config/conf.d/" ]]; then
+  confFiles=$(find /config -type f)
+  echo "copy configuration files..."
+  for file in $confFiles; do
+    cp $file /etc/freeradius/${file#/config/conf.d/}
+  done
+fi
+
+
 if [[ ! -f "/config/clients.conf" ]]; then
   echo "# don't delete this file" > /config/clients.conf
 fi
