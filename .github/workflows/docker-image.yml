@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: set tag date variable
         id: datetag
-        run: echo "::set-output name=datetag::$(date +'%Y%m%d%H%M%S')"
+        run: echo "datetag=$(date +'%Y%m%d%H%M%S')" >> "$GITHUB_ENV"
 
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -56,4 +56,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest, ghcr.io/${{ github.repository}}:${{ steps.datetag.outputs.datetag }}
+          tags: ghcr.io/${{ github.repository }}:latest, ghcr.io/${{ github.repository}}:$datetag
