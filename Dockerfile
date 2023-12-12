@@ -8,7 +8,7 @@ ENV LANG="C.UTF-8"
 RUN apt-get update && \
     apt-get install -y python3 python3-pip cron locales &&\
     locale-gen && \
-    pip3 install openpyxl requests
+    pip3 install requests redis
 
 
 # change files
